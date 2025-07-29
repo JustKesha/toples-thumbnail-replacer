@@ -1,6 +1,7 @@
 {
   "name": "Smart man with glasses - YouTube Thumbnail Replacer",
   "description": "Replaces YouTube thumbnails for videos from @toplesofficial with smart man with glasses wallpaper download.",
+  "homepage_url": "https://github.com/JustKesha/toples-thumbnail-replacer",
   "version": "1.0",
   "manifest_version": 3,
   "content_scripts": [
@@ -22,5 +23,10 @@
       "images/smart-man-with-glasses-wallpaper-download.png"
     ]
   }],
-  "permissions": []
+  "permissions": [],
+  "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+  }
 }
