@@ -42,7 +42,10 @@ function observe(updateMethod) {
  */
 function update(
   replacerThumbnailUrl = 'images/smart-man-with-glasses-wallpaper-download.png',
-  videoElementValidator = (videoElement, thumbnailUrl) => {
+  videoElementValidator = (
+    videoElement, thumbnailUrl,
+    fallbackUrl = 'https://media1.tenor.com/m/-znwjo-thYwAAAAC/smart-guy-with-glasses-download-wallpaper-smart-guy.gif'
+  ) => {
     const titleElement = videoElement.querySelector('#video-title');
     if (!titleElement || !titleElement.textContent.includes('ТОПЛЕС'))
       return false
@@ -51,8 +54,13 @@ function update(
     if (!thumbnailImg)
       return false
 
-    // Replace with local image
-    thumbnailImg.src = chrome.runtime.getURL(thumbnailUrl);
+    try {
+      // Replace with local image
+      thumbnailImg.src = chrome.runtime.getURL(thumbnailUrl);
+    } catch (error) {
+      // Otherwise use a public fallback url
+      thumbnailImg.src = fallbackUrl;
+    }
     // Remove srcset if it exists to prevent loading other resolutions
     thumbnailImg.removeAttribute('srcset');
     return true
