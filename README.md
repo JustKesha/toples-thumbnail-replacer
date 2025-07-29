@@ -11,3 +11,7 @@ Chrome extension that replaces YouTube video thumbnails from the [@toplesofficia
 ### Manual installation
 
 [Video guide (24 seconds)](https://www.youtube.com/watch?v=oswjtLwCUqg)
+
+## Preview
+
+<img alt="Preview Screenshot" src="preview/showcase.png" width="100%" />
